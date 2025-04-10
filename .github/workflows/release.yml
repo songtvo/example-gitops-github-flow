@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest # use self-hosted machines if your Bytebase runs in internal networks.
     environment: test
     env:
-      BYTEBASE_URL: https://github.com/songtvo/example-gitops-github-flow
+      BYTEBASE_URL: https://9d00-54-168-121-38.ngrok-free.app/
       BYTEBASE_SERVICE_ACCOUNT: api-sample@service.bytebase.com
       BYTEBASE_PROJECT: "projects/project-sample"
       # The Bytebase rollout pipeline will deploy to 'test' and 'prod' environments.
@@ -46,7 +46,7 @@ jobs:
         id: create-release
         uses: bytebase/create-release-action@v1
         with:
-          url: ${{ env.BYTEBASE_URL }}
+          url: https://9d00-54-168-121-38.ngrok-free.app/
           token: ${{ steps.login.outputs.token }}
           file-pattern: ${{ env.FILE_PATTERN }}
           # fail the action if release checks report any error.
